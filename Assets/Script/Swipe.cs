@@ -40,7 +40,7 @@ public class Swipe : MonoBehaviour
     {
         float angle = Vector2. SignedAngle(Vector2.right, swipeVector);
 
-        if (angle >= -45f && angle <- 45f)
+        if (angle >= -45f && angle <= 45f)
             {
             onSwipeRight?.Invoke();
             }
@@ -55,8 +55,7 @@ public class Swipe : MonoBehaviour
         else if (angle < -45f && angle > -135f)
         {
             onSwipeDown?.Invoke();
-        }
-            
+        }      
     }
 }
 

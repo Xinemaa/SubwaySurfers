@@ -301,13 +301,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 877abb5b7086d2f4b8d7fbf09fe80a0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 419979008}
   m_SourcePrefab: {fileID: 100100000, guid: 877abb5b7086d2f4b8d7fbf09fe80a0e, type: 3}
 --- !u!4 &419979006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 877abb5b7086d2f4b8d7fbf09fe80a0e, type: 3}
   m_PrefabInstance: {fileID: 419979005}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &419979007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 877abb5b7086d2f4b8d7fbf09fe80a0e, type: 3}
+  m_PrefabInstance: {fileID: 419979005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &419979008
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419979007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 772e96a7302f9b24ba821f57e831d28b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &897653764
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,8 +408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dca994908752b14cbcfb6410df826d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterData: {fileID: 11400000, guid: b16df43642861c0438fef2220e92f4d5, type: 2}
+  characterAnimator: {fileID: 419979008}
   jumpForce: 5
   distanceToMove: 2
+  moveDuration: 0.2
 --- !u!54 &897653768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -608,13 +641,13 @@ MonoBehaviour:
   onSwipeDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 897653764}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 897653767}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: MoveDown
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
