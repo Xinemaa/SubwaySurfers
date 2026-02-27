@@ -1,17 +1,20 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlatformManagement : MonoBehaviour
 {
     [SerializeField]
     private Transform platformsPivot;
-     [SerializeField]
+    [SerializeField]
     private InstantiatePoolObjects[] platformPrefabs;
-     [SerializeField]
-     private InstantiatePoolObjects[] securePlatformPrefabs;
-      [SerializeField]
+    [SerializeField]
+    private InstantiatePoolObjects[] securePlatformPrefabs;
+    [SerializeField]
     private int initialPlatforms = 5;
-     [SerializeField]
+    [SerializeField]
     private float speed = 5f;
+     [SerializeField]
+    private UnityEvent<Platform> onPlatformPassed;
     private bool isRunning = true;
     private GameObject lastPlatform;
     private int platformsInstantiated = 0;
@@ -58,6 +61,7 @@ public class PlatformManagement : MonoBehaviour
             newPlatform.transform.SetParent(transform);
             newPlatform.transform.localPosition = spawnPosition + newPlatform.GetComponent<Collider>().bounds.size.z * Vector3.forward * 0.5f;
             lastPlatform = newPlatform;
+            onPlatformPassed?.Invoke(newPlatform.GetComponent<Platform>());
         }
     }
     private void Update()
