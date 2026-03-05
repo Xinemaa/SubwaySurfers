@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - Coin
   - JumpPowerUp
+  - Magnet
   layers:
   - Default
   - TransparentFX

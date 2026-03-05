@@ -9,6 +9,8 @@ public class PlayerCollider : MonoBehaviour
   private string coinTag = "Coin";
    [SerializeField]
   private string JumpPowerUpTag = "JumpPowerUp";
+   [SerializeField]
+    private UnityEvent<Transform> onMagnetCollected;
   [SerializeField]
   private UnityEvent<Transform> onObstacleCollision;
    [SerializeField]
@@ -29,6 +31,11 @@ public class PlayerCollider : MonoBehaviour
         else if (other.CompareTag(JumpPowerUpTag))
         {
             onJumpPowerUpCollected?.Invoke(transform);
+            other.gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("Magnet"))
+        {
+            onMagnetCollected?.Invoke(transform);
             other.gameObject.SetActive(false);
         }
     }
