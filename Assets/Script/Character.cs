@@ -17,7 +17,7 @@ public class Character : MonoBehaviour
         get { return jumpForce; }
         set { jumpForce = value; }
     }
-     [SerializeField]
+    [SerializeField]
     private float distanceToMove = 2f;
     [SerializeField]
     private float moveDuration = 0.2f;
@@ -132,7 +132,7 @@ public class Character : MonoBehaviour
     {
         if (isActive && collision.gameObject.CompareTag("Ground"))
         {
-            if (!isRolling)
+            if (!isRolling && !isGrounded)
             {
                 characterAnimator.Play(characterData.runAnimationName,0 ,0f);
             }
