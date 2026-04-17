@@ -1329,6 +1329,7 @@ Transform:
   - {fileID: 670861926}
   - {fileID: 1812700338}
   - {fileID: 670960213}
+  - {fileID: 2084306073}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543992553
@@ -2352,7 +2353,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &897653769
 MonoBehaviour:
@@ -4933,6 +4934,7 @@ MonoBehaviour:
   - {fileID: 1227504412}
   flyingPlatformPrefabs:
   - {fileID: 670960212}
+  - {fileID: 2084306074}
   flyingPlatformHeight: 4.5
   initialPlatforms: 5
   minSpeed: 5
@@ -5914,6 +5916,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1875860358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2084306072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084306073}
+  - component: {fileID: 2084306074}
+  m_Layer: 0
+  m_Name: InstansiateFlyingPlatforms2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2084306073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084306072}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.29, y: -0.02679, z: 54.7149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 509453207}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2084306074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084306072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ca9153f77a3b4baca63c7a4cbe03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 6664077666658144691, guid: ed0d0a6d04ce49d4281a8cb14934dbad, type: 3}
 --- !u!1 &2085034442
 GameObject:
   m_ObjectHideFlags: 0
